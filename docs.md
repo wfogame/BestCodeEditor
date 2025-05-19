@@ -4,12 +4,12 @@ Read Offical Nodejs docs
 
 Reading & Writing Files
 
-   fs.readFile(path, [options], callback) — Read file asynchronously.
-   fs.readFileSync(path, [options]) — Read file synchronously.
-   fs.writeFile(file, data, [options], callback) — Write file asynchronously (creates or overwrites).
-   fs.writeFileSync(file, data, [options]) — Write file synchronously.
-   fs.appendFile(path, data, [options], callback) — Append data to a file asynchronously.
-   fs.appendFileSync(path, data, [options]) — Append data synchronously.
+fs.readFile(path, [options], callback) — Read file asynchronously.
+fs.readFileSync(path, [options]) — Read file synchronously.
+fs.writeFile(file, data, [options], callback) — Write file asynchronously (creates or overwrites).
+fs.writeFileSync(file, data, [options]) — Write file synchronously.
+fs.appendFile(path, data, [options], callback) — Append data to a file asynchronously.
+fs.appendFileSync(path, data, [options]) — Append data synchronously.
 
 Working with Directories
 
@@ -43,6 +43,7 @@ Watching Files
 The `http` module allows you to create web servers and handle HTTP requests and responses.
 
 **Request Object (`req`):**
+
 - `req.url` — The URL of the request.
 - `req.method` — HTTP method (GET, POST, etc.).
 - `req.headers` — Request headers as an object.
@@ -55,15 +56,19 @@ The `http` module allows you to create web servers and handle HTTP requests and 
 - `req.statusCode` — The HTTP status code ( rarely used for req)
 
 **Example: Reading POST data**
+
 ```js
-let body = '';
-req.on('data', chunk => { body += chunk; });
-req.on('end', () => {
-    // body contains the full POST data
+let body = "";
+req.on("data", (chunk) => {
+  body += chunk;
+});
+req.on("end", () => {
+  // body contains the full POST data
 });
 ```
 
 **Response Object (`res`):**
+
 - `res.writeHead(statusCode, headers)` — Set status and headers.
 - `res.setHeader(name, value)` — Set a single header.
 - `res.getHeader(name)` — Get a response header value.
@@ -78,13 +83,15 @@ req.on('end', () => {
 - `res.headersSent` — Boolean, true if headers have been sent.
 
 **Example:**
+
 ```js
-res.writeHead(200, { 'Content-Type': 'text/plain' });
-res.write('Hello, ');
-res.end('world!');
+res.writeHead(200, { "Content-Type": "text/plain" });
+res.write("Hello, ");
+res.end("world!");
 ```
 
 **Common Content-Types:**
+
 - `text/html` — HTML documents
 - `text/plain` — Plain text
 - `application/json` — JSON data
@@ -97,8 +104,9 @@ res.end('world!');
 - `application/pdf` — PDF documents
 
 **Parsing URLs:**
+
 ```js
-const url = require('url');
+const url = require("url");
 const parsed = url.parse(req.url);
 console.log(parsed.pathname); // Path part of the URL
 ```
@@ -112,11 +120,11 @@ console.log(parsed.pathname); // Path part of the URL
 - You can use `require('module')` to import built-in or third-party modules.
 - Node.js is event-driven and non-blocking (asynchronous by default).
 - Common built-in modules: `fs`, `http`, `path`, `url`, `os`, `crypto`, `events`, `stream`, `child_process`.
-- Run a Node.js script with:  
+- Run a Node.js script with:
   ```
   node filename.js
   ```
-- Use `npm` (Node Package Manager) to install packages:  
+- Use `npm` (Node Package Manager) to install packages:
   ```
   npm install package-name
   ```
@@ -124,5 +132,6 @@ console.log(parsed.pathname); // Path part of the URL
 
 See the [Node.js documentation](https://nodejs.org/en/docs/) for more details.
 
-
 - `Made Using Artifical Intelligence.`
+
+- `NOT JOKING PRETTIER IS SO OP and good`

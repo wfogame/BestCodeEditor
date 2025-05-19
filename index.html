@@ -1,61 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeEditor</title>
-    <link rel = 'stylesheet' href = 'style.css'>
-</head>
-<body>
-
-    <div id = 'FileMp'>
-        <div style = 'margin:5px;'>Files</div>
-        <div class = 'files' id = 'makefile'>
-            <svg viewBox="0 0 32 32">
-                <rect x="14" y="4" width="4" height="24" fill="black"/>
-                <rect x="4" y="14" width="24" height="4" fill="black"/>
-            </svg>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="FileMp">
+      <div style="margin: 5px">Files</div>
+      <div class="files" id="makefile">
+        <svg viewBox="0 0 32 32">
+          <rect x="14" y="4" width="4" height="24" fill="black" />
+          <rect x="4" y="14" width="24" height="4" fill="black" />
+        </svg>
         File
-        </div>
+      </div>
 
-        <div class = 'files' id = 'mkdir'>
-            <svg viewBox="0 0 32 32">
-                <rect x="14" y="4" width="4" height="24" fill="black"/>
-                <rect x="4" y="14" width="24" height="4" fill="black"/>
-            </svg>
+      <div class="files" id="mkdir">
+        <svg viewBox="0 0 32 32">
+          <rect x="14" y="4" width="4" height="24" fill="black" />
+          <rect x="4" y="14" width="24" height="4" fill="black" />
+        </svg>
         Folder
-        </div>
-        <div class = 'files' id = 'rename'>
-            <svg viewBox="0 0 32 32">
-                <rect x="14" y="4" width="4" height="24" fill="black"/>
-                <rect x="4" y="14" width="24" height="4" fill="black"/>
-            </svg>
+      </div>
+      <div class="files" id="rename">
+        <svg viewBox="0 0 32 32">
+          <rect x="14" y="4" width="4" height="24" fill="black" />
+          <rect x="4" y="14" width="24" height="4" fill="black" />
+        </svg>
         Rename
-        </div>
+      </div>
     </div>
 
+    <script>
+      let counter = 0;
+      let iframe = document.createElement("iframe");
 
-   <script>
+      function mkfolder() {
+        iframe.id = prompt("name");
+        iframe.src = `iframe[${counter}].html`;
+        document.body.appendChild(iframe);
 
+        counter++;
+      }
 
-    let counter = 0;
-    let iframe = document.createElement('iframe');
-
-        function mkfolder(){
-            
-                iframe.id = prompt("name");
-                iframe.src = `iframe[${counter}].html`;
-                document.body.appendChild(iframe);
-
-                 counter ++;
-            
-
-
-        }
-
-        document.getElementById('mkdir').addEventListener('click',mkfolder);
-
-   </script>
-
-</body>
+      document.getElementById("mkdir").addEventListener("click", mkfolder);
+    </script>
+  </body>
 </html>
