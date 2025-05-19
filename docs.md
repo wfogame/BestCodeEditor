@@ -1,7 +1,6 @@
-Read Official Node.js docs
+Read Offical Nodejs docs
 
     https://nodejs.org/docs/latest/api/fs.html
-    https://nodejs.org/docs/latest/api/http.html
 
 Reading & Writing Files
 
@@ -49,9 +48,11 @@ The `http` module allows you to create web servers and handle HTTP requests and 
 - `req.headers` — Request headers as an object.
 - `req.on('data', chunk)` — Listen for incoming data (useful for POST/PUT).
 - `req.on('end', callback)` — Called when all data has been received.
-- `req.socket` — Underlying network socket.
-- `req.statusCode` — The HTTP status code (rarely set on req).
 - `req.setEncoding(encoding)` — Set the encoding for incoming data.
+- `req.socket` — Underlying network socket.
+- `req.connection` — Alias for `req.socket`.
+- `req.httpVersion` — HTTP protocol version.
+- `req.statusCode` — The HTTP status code ( rarely used for req)
 
 **Example: Reading POST data**
 ```js
@@ -73,6 +74,8 @@ req.on('end', () => {
 - `res.statusMessage` — Set or get the HTTP status message.
 - `res.writeContinue()` — Send a 100 Continue message.
 - `res.writeProcessing()` — Send a 102 Processing message (rarely used).
+- `res.finished` — Boolean, true if response has been sent.
+- `res.headersSent` — Boolean, true if headers have been sent.
 
 **Example:**
 ```js
@@ -82,12 +85,16 @@ res.end('world!');
 ```
 
 **Common Content-Types:**
-- `text/html`
-- `text/plain`
-- `application/json`
-- `application/javascript`
-- `text/css`
-- `image/png`, `image/jpeg`, `image/svg+xml`
+- `text/html` — HTML documents
+- `text/plain` — Plain text
+- `application/json` — JSON data
+- `application/javascript` — JavaScript files
+- `text/css` — CSS stylesheets
+- `image/png` — PNG images
+- `image/jpeg` — JPEG images
+- `image/svg+xml` — SVG images
+- `image/gif` — GIF images
+- `application/pdf` — PDF documents
 
 **Parsing URLs:**
 ```js
@@ -96,4 +103,26 @@ const parsed = url.parse(req.url);
 console.log(parsed.pathname); // Path part of the URL
 ```
 
-See the [Node.js HTTP docs](https://nodejs.org/docs/latest/api/http.html) for more details.
+---
+
+# Basic Node.js Information
+
+- **Node.js** is a JavaScript runtime built on Chrome's V8 engine.
+- It allows you to run JavaScript on the server side.
+- You can use `require('module')` to import built-in or third-party modules.
+- Node.js is event-driven and non-blocking (asynchronous by default).
+- Common built-in modules: `fs`, `http`, `path`, `url`, `os`, `crypto`, `events`, `stream`, `child_process`.
+- Run a Node.js script with:  
+  ```
+  node filename.js
+  ```
+- Use `npm` (Node Package Manager) to install packages:  
+  ```
+  npm install package-name
+  ```
+- Entry point is usually `index.js` or `server.js`.
+
+See the [Node.js documentation](https://nodejs.org/en/docs/) for more details.
+
+
+- `Made Using Artifical Intelligence.`
