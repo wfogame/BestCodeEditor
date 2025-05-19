@@ -63,3 +63,17 @@ body{
     padding:7.3px;
 
 }
+
+
+iframe{
+    position: absolute;
+    padding: 5px;
+    margin:6px;
+    top: 10px;      /* Adjust as needed */
+    right: 10px;    /* Adjust as needed */
+    padding: 3px;
+    margin: 6px;
+    height:85%;
+
+
+}
