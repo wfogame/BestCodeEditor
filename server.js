@@ -5,15 +5,18 @@ const url = require("url");
 const server = http.createServer((req, res) => {
   const pathname = url.parse(req.url).pathname;
   const PathExt = path.extname(pathname);
-  const CheckCode = pathname.slice(0, 5);
+  const CheckCode = pathname.slice(0, 7);
 
-  if (CheckCode === "iframe") {
+  if (CheckCode == "/iframe") {
     const iframeNum = pathname
       .replace(PathExt, "")
       .replace("iframe", "")
       .replace("[", "")
-      .replace("]", "");
+      .replace("]", "")
+      .replace("/", "");
+
     res.end(iframeNum);
+    return;
   }
 
   res.writeHead(200, { "Content-Type": "text/plain" });
