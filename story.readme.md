@@ -1,0 +1,1 @@
+Once Upon a time, a new invention was born, its name was called "The mechaenical pencil", it sold for a jaw dropping price of 10, completely finished, acheive3000's ( random reading website). This often times took the whole day to complete, for a single pencil 

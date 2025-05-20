@@ -31,13 +31,21 @@
         </svg>
         Rename
       </div>
+    <div class="files" id="openOutPut">
+        <svg viewBox="0 0 32 32">
+          <rect x="14" y="4" width="4" height="24" fill="black" />
+          <rect x="4" y="14" width="24" height="4" fill="black" />
+        </svg>
+        Run
+      </div>
+
     </div>
 
     <script>
       let counter = 0;
       let iframe = document.createElement("iframe");
 
-      function mkfolder() {
+      function openOutPut() {
         iframe.id = prompt("name");
         iframe.src = `iframe[${counter}].html`;
         document.body.appendChild(iframe);
@@ -45,7 +53,7 @@
         counter++;
       }
 
-      document.getElementById("mkdir").addEventListener("click", mkfolder);
+      document.getElementById("openOutPut").addEventListener("click", openOutPut);
     </script>
   </body>
 </html>
