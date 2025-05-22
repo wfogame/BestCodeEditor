@@ -7,6 +7,27 @@ const server = http.createServer((req, res) => {
   const PathExt = path.extname(pathname);
   const CheckCode = pathname.slice(0, 7);
 
+  const auth = req.headers.authorization;
+
+
+    if(!auth){
+        res.statusCode = 401;
+        res.setHeader('WWW-Authenticate','Basic realm="AUTH"')
+        return res.end('U need authorzation')
+
+
+    }
+
+  const b64auth = auth.split(' ')[1];
+  const [user, pass] = Buffer.from(b64auth, 'base64').toString().split(':');
+ 
+  if(user !== 'main'||pass !== 'main'){
+
+    res.setHeader('WWW-Authenticate','Basic realm="AUTHS"')
+    return res.end('Incorrect creds');
+  }
+
+
   if (CheckCode == "/iframe") {
     const iframeNum = pathname
       .replace(PathExt, "")
